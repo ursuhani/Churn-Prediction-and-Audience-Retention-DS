@@ -6,8 +6,6 @@
 [![Pytest](https://img.shields.io/badge/pytest-Passing-brightgreen.svg)](https://docs.pytest.org/)
 [![License](https://img.shields.io/badge/License-Academic-lightgrey.svg)]()
 
-> **Third-Year Computer Science / Data Science Capstone Project**  
-> An end-to-end, reproducible, and academically defensible Machine Learning system addressing subscriber churn and episodic content retention on streaming platforms.
 
 ---
 
