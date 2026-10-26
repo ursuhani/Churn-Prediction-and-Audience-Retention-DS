@@ -1,0 +1,84 @@
+{
+  "selected_k": 4,
+  "k_diagnostics": {
+    "k_values": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "inertias": [
+      22491.26161018927,
+      17740.214579178282,
+      15563.496049788775,
+      13797.80400447892,
+      12597.222011401056
+    ],
+    "silhouettes": [
+      0.3134,
+      0.2334,
+      0.2182,
+      0.224,
+      0.2217
+    ]
+  },
+  "pca_explained_variance_ratio": [
+    0.4227,
+    0.234
+  ],
+  "profiles": {
+    "0": {
+      "cluster_id": 0,
+      "count": 601,
+      "percentage": 12.02,
+      "churn_rate": 0.0383,
+      "watch_hours_mean": 36.06,
+      "last_login_days_mean": 28.93,
+      "monthly_fee_mean": 12.44,
+      "number_of_profiles_mean": 3.28,
+      "engagement_score_mean": 57.93,
+      "watch_to_fee_mean": 3.05,
+      "cluster_name": "Moderate Streamers (Cohort 0)"
+    },
+    "1": {
+      "cluster_id": 1,
+      "count": 1306,
+      "percentage": 26.12,
+      "churn_rate": 0.3415,
+      "watch_hours_mean": 9.05,
+      "last_login_days_mean": 14.79,
+      "monthly_fee_mean": 13.88,
+      "number_of_profiles_mean": 1.96,
+      "engagement_score_mean": 38.57,
+      "watch_to_fee_mean": 0.69,
+      "cluster_name": "Casual Low-Frequency Viewers"
+    },
+    "2": {
+      "cluster_id": 2,
+      "count": 1329,
+      "percentage": 26.58,
+      "churn_rate": 0.3363,
+      "watch_hours_mean": 8.62,
+      "last_login_days_mean": 23.49,
+      "monthly_fee_mean": 14.31,
+      "number_of_profiles_mean": 4.56,
+      "engagement_score_mean": 46.14,
+      "watch_to_fee_mean": 0.62,
+      "cluster_name": "Dormant / High Churn Risk"
+    },
+    "3": {
+      "cluster_id": 3,
+      "count": 1764,
+      "percentage": 35.28,
+      "churn_rate": 0.9065,
+      "watch_hours_mean": 7.54,
+      "last_login_days_mean": 46.79,
+      "monthly_fee_mean": 13.49,
+      "number_of_profiles_mean": 2.57,
+      "engagement_score_mean": 21.72,
+      "watch_to_fee_mean": 0.59,
+      "cluster_name": "Dormant / High Churn Risk (Group 2)"
+    }
+  }
+}

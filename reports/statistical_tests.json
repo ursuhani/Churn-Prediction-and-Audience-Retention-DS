@@ -1,0 +1,136 @@
+{
+  "ttests": {
+    "watch_hours": {
+      "feature": "watch_hours",
+      "test": "Welch's t-test",
+      "t_statistic": 38.5023,
+      "p_value": 5.2174227628903256e-267,
+      "is_significant": true,
+      "mean_Retained": 17.45,
+      "std_Retained": 13.924,
+      "n_Retained": 2485,
+      "mean_Churned": 5.918,
+      "std_Churned": 5.419,
+      "n_Churned": 2515,
+      "interpretation": "Statistically significant difference (p < 0.05) in watch_hours between Retained and Churned."
+    },
+    "last_login_days": {
+      "feature": "last_login_days",
+      "test": "Welch's t-test",
+      "t_statistic": -37.7874,
+      "p_value": 9.49110761174573e-275,
+      "is_significant": true,
+      "mean_Retained": 21.771,
+      "std_Retained": 16.155,
+      "n_Retained": 2485,
+      "mean_Churned": 38.309,
+      "std_Churned": 14.752,
+      "n_Churned": 2515,
+      "interpretation": "Statistically significant difference (p < 0.05) in last_login_days between Retained and Churned."
+    },
+    "monthly_fee": {
+      "feature": "monthly_fee",
+      "test": "Welch's t-test",
+      "t_statistic": 10.885,
+      "p_value": 2.74952491430032e-27,
+      "is_significant": true,
+      "mean_Retained": 14.248,
+      "std_Retained": 3.529,
+      "n_Retained": 2485,
+      "mean_Churned": 13.125,
+      "std_Churned": 3.765,
+      "n_Churned": 2515,
+      "interpretation": "Statistically significant difference (p < 0.05) in monthly_fee between Retained and Churned."
+    },
+    "engagement_score": {
+      "feature": "engagement_score",
+      "test": "Welch's t-test",
+      "t_statistic": 66.0588,
+      "p_value": 0.0,
+      "is_significant": true,
+      "mean_Retained": 47.562,
+      "std_Retained": 12.159,
+      "n_Retained": 2485,
+      "mean_Churned": 26.496,
+      "std_Churned": 10.304,
+      "n_Churned": 2515,
+      "interpretation": "Statistically significant difference (p < 0.05) in engagement_score between Retained and Churned."
+    },
+    "watch_to_fee_ratio": {
+      "feature": "watch_to_fee_ratio",
+      "test": "Welch's t-test",
+      "t_statistic": 31.514,
+      "p_value": 6.043102415961632e-191,
+      "is_significant": true,
+      "mean_Retained": 1.349,
+      "std_Retained": 1.239,
+      "n_Retained": 2485,
+      "mean_Churned": 0.501,
+      "std_Churned": 0.519,
+      "n_Churned": 2515,
+      "interpretation": "Statistically significant difference (p < 0.05) in watch_to_fee_ratio between Retained and Churned."
+    }
+  },
+  "chi2_tests": {
+    "subscription_type": {
+      "feature": "subscription_type",
+      "test": "Chi-Square Test of Independence",
+      "chi2_statistic": 133.2778,
+      "p_value": 1.1457351490503293e-29,
+      "degrees_of_freedom": 2,
+      "cramers_v": 0.1633,
+      "is_significant": true,
+      "interpretation": "Significant association (p < 0.05, Cram\u00e9r's V = 0.163) between subscription_type and churned."
+    },
+    "payment_method": {
+      "feature": "payment_method",
+      "test": "Chi-Square Test of Independence",
+      "chi2_statistic": 96.9069,
+      "p_value": 4.478433118358446e-20,
+      "degrees_of_freedom": 4,
+      "cramers_v": 0.1392,
+      "is_significant": true,
+      "interpretation": "Significant association (p < 0.05, Cram\u00e9r's V = 0.139) between payment_method and churned."
+    },
+    "device": {
+      "feature": "device",
+      "test": "Chi-Square Test of Independence",
+      "chi2_statistic": 1.446,
+      "p_value": 0.8361578932203331,
+      "degrees_of_freedom": 4,
+      "cramers_v": 0.017,
+      "is_significant": false,
+      "interpretation": "No significant dependency detected between device and churned."
+    },
+    "region": {
+      "feature": "region",
+      "test": "Chi-Square Test of Independence",
+      "chi2_statistic": 2.6542,
+      "p_value": 0.7531077652230413,
+      "degrees_of_freedom": 5,
+      "cramers_v": 0.023,
+      "is_significant": false,
+      "interpretation": "No significant dependency detected between region and churned."
+    },
+    "gender": {
+      "feature": "gender",
+      "test": "Chi-Square Test of Independence",
+      "chi2_statistic": 0.6501,
+      "p_value": 0.7224877191844741,
+      "degrees_of_freedom": 2,
+      "cramers_v": 0.0114,
+      "is_significant": false,
+      "interpretation": "No significant dependency detected between gender and churned."
+    },
+    "favorite_genre": {
+      "feature": "favorite_genre",
+      "test": "Chi-Square Test of Independence",
+      "chi2_statistic": 6.9704,
+      "p_value": 0.3235910148264879,
+      "degrees_of_freedom": 6,
+      "cramers_v": 0.0373,
+      "is_significant": false,
+      "interpretation": "No significant dependency detected between favorite_genre and churned."
+    }
+  }
+}
