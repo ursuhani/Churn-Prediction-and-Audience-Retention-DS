@@ -151,43 +151,9 @@ jupyter notebook notebooks/ott_retention_churn_analysis.ipynb
 - **Payment Method vs Churn:** Pearson's Chi-Square ($\chi^2 = 97.43, p = 3.4 \times 10^{-20}$, Cramér's V = 0.140). Non-recurring manual methods (Crypto: 59.7%, Gift Cards: 57.8%) churn at significantly higher rates than auto-pay Credit Cards (43.6%).
 - **Gender vs Churn:** Pearson's Chi-Square ($\chi^2 = 0.635, p = 0.728$). Confirms no statistically significant demographic bias in churn propensity.
 
----
 
-## 🎓 College Viva / Oral Exam Q&A Guide
-
-Prepare for your project presentation and viva with these comprehensive answers:
-
-### Q1: What is the primary difference between subscriber churn and episode drop-off?
-**Answer:** Subscriber churn represents **macro-level relationship termination**—a subscriber canceling their monthly billing relationship. Episode drop-off represents **micro-level content abandonment**—a viewer stopping playback mid-episode. While episode drop-off can eventually lead to disengagement and subscriber churn, they operate on different data granularities and must be modeled as separate analytical pipelines.
-
-### Q2: How did you prevent data leakage during preprocessing and feature engineering?
-**Answer:** We implemented four strict leakage prevention protocols:
-1. All Scikit-Learn `ColumnTransformers` and scaling transformations were fitted exclusively on the training split (`X_train`) and applied out-of-sample to `X_test`.
-2. Normalization bounds for the composite **Subscriber Engagement Score** were derived exclusively from training distribution quantiles.
-3. We identified that `drop_off_probability` and `retention_risk` in `ott_episode_retention.csv` were deterministic synthetic mappings of the target `drop_off` and strictly excised them from predictors.
-4. We constructed a separate **Early-Warning Model** that excludes post-completion metrics (`avg_watch_percentage`, `pause_count`, `rewind_count`) to simulate real-time inference prior to viewing completion.
-
-### Q3: Why is Accuracy alone an inadequate metric for evaluating these models?
-**Answer:** For subscriber churn, the dataset is balanced (~50% churned), but in real-world platforms churn rates typically range between 3% and 10%, where a naive majority-class classifier can achieve 90%+ accuracy while catching 0 churners. For episode drop-off, the target is imbalanced (14.5% positive drop-offs). Therefore, we evaluated models using **ROC-AUC**, **Precision**, **Recall**, and **F1-Score** on the positive minority class, penalizing false negatives where an at-risk subscriber is missed.
-
-### Q4: How is the composite Subscriber Engagement Score formulated?
-**Answer:** The engagement score scales from 0 to 100 using normalized components:
-$$\text{Engagement Score} = 100 \times [0.45 \cdot \text{Norm}(W) + 0.35 \cdot \text{Norm}(R) + 0.20 \cdot \text{Norm}(P)]$$
-Where $W$ is monthly watch hours, $R$ is inverted login recency (higher = more recently active), and $P$ is household profile count. The weights reflect platform consumption volume (45%), habitual login frequency (35%), and household multi-user stickiness (20%).
-
-### Q5: How does K-Means audience segmentation complement supervised churn prediction?
-**Answer:** Supervised churn models output a single scalar probability ($P(\text{churn})$), but do not explain *how* a customer engages with the service. K-Means clustering ($k=4$) segments the customer base into distinct operational cohorts based on behavioral topography (e.g., *Dormant At-Risk*, *Core High-Engagement Viewers*, *Family Multi-Profile Accounts*, and *Casual Streamers*). This allows marketing and product teams to design targeted interventions tailored to each segment's behavioral characteristics.
-
-### Q6: How does your recommendation layer calculate Revenue at Risk?
-**Answer:** Revenue at Risk is computed as the expected monetary loss:
-$$\text{Revenue at Risk} = \text{Monthly Fee} \times \hat{P}(\text{Churn})$$
-For high-risk subscribers, the system multiplies their individual monthly fee by their model-predicted churn probability and projects annual run-rate loss ($\text{Fee} \times 12 \times P$). This provides marketing teams with a quantitative justification for intervention spending (e.g., offering a $2 discount campaign to rescue an expected $150 annual customer value).
-
----
-
-## 🖥️ Live Demonstration Script for Professors / Evaluators
-
-When presenting this project during a lab demonstration or viva, follow this 4-step sequence:
+## 🖥️ Live Demonstration 
+When presenting this project:
 
 1. **Step 1: Open the Terminal & Run the Test Suite**
    - Execute `python -m pytest tests -v`.
